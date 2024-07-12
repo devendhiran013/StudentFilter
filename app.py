@@ -33,17 +33,17 @@ def filter_students():
     elif filter_by == 'all':
         filtered_students = students
     elif filter_by == 'major':
-        major = data.get('filter_value', '')  # Get the 'filter_value' (major) if it exists, otherwise set it to an empty string
+        major = data.get('filter_value', '') 
         filtered_students = [student for student in students if student['major'] == major]
     elif filter_by == 'year':
-        year = data.get('filter_value', '')  # Get the 'filter_value' (year) if it exists, otherwise set it to an empty string
+        year = data.get('filter_value', '') 
         if year:
             filtered_students = [student for student in students if student['year'] == int(year)]
         else:
             filtered_students = students
     elif filter_by == 'gpa_range':
-        min_gpa = data.get('filter_value', {}).get('min_gpa', '')  # Get the 'min_gpa' if it exists, otherwise set it to an empty string
-        max_gpa = data.get('filter_value', {}).get('max_gpa', '')  # Get the 'max_gpa' if it exists, otherwise set it to an empty string
+        min_gpa = data.get('filter_value', {}).get('min_gpa', '') 
+        max_gpa = data.get('filter_value', {}).get('max_gpa', '') 
         try:
             min_gpa = float(min_gpa)
             max_gpa = float(max_gpa)
